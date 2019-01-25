@@ -1,5 +1,7 @@
 # next-name
 
+is a web application to random the name of members then choose one. we can use this application in order to decide who's next should be give update or presentation for instance. so not boring to order it alphabetic ascending or descending.
+
 ## Project setup
 ```
 yarn install
