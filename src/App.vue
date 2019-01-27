@@ -1,6 +1,6 @@
 <template>
   <b-container fluid class="w-100 h-100">
-    <b-row class="top-row">
+    <b-row class="top-row" ref="memberContainer">
       <div class="rounded-circle" v-for="member in members" :key="member.id" 
       :style="{
         backgroundColor: randomColor(member.id), 
@@ -193,8 +193,10 @@ export default {
         const chosenIndex = this.members.findIndex((member) => {
           return member.id === memberSelected.id
         })
-        this.members[chosenIndex].choosed = true
-        this.members[chosenIndex].borderColor = '#42f477'
+        const selectedName = this.members[chosenIndex]
+        selectedName.choosed = true
+        selectedName.borderColor = '#42f477'
+        this.moveSelectedNameToWinnerPlace(selectedName)
       }
     },
     setChosenMemberBorderColor(){
@@ -203,6 +205,13 @@ export default {
           val.borderColor = '#f45641'
         }
       })
+    },
+    moveSelectedNameToWinnerPlace(member) {
+      const memberContainer = this.$refs.memberContainer
+      const leftPosition = ( memberContainer.clientWidth / 2 ) - 37
+      const topPosition = memberContainer.clientHeight - 120
+      member.top = topPosition.toString()
+      member.left = leftPosition.toString()
     }
   }
 }
