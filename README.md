@@ -1,6 +1,6 @@
 # next-name
 
-is a web application to random the name of members then choose one. we can use this application in order to decide who's next should be give update or presentation for instance. so not boring to order it alphabetic ascending or descending.
+is a single web application that randoming the list of strings and then the system will choose it. Once it choosen, it will not included anymore in the next turn as long as a user not refresing the web.
 
 ## Project setup
 ```
